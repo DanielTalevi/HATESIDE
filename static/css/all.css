@@ -1,0 +1,86 @@
+.topbar {
+    position: fixed;      /* fica no topo mesmo rolando a página */
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 100;         /* fica por cima do resto */
+    
+
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 0% 24px;
+
+        background: rgba(56, 52, 52, 1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+.topbar h1 {
+    margin: 2px;
+    color: #00a388b9;
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-shadow: 0 0 8px #00a388b9;
+    margin-left: 0.8rem;
+}
+
+.topbar h3{
+    color: #4adff380;
+    font-size: 0.9rem;
+    margin-bottom: -0.4rem;
+    display: flex;
+    align-items: left;
+    text-shadow: 0 0 8px #667976b9;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #1a1a1a;
+    padding-top: 80px; /* espaço para a topbar */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: #cfd8d6;
+    text-decoration: none;
+    border-left: 4px solid transparent; /* reserva o espaço da barrinha */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: rgba(51, 115, 212, 0.2);
+    border-left: 4px solid #00d2d9; /* barrinha azul */
+    color: #fff;
+}
+
+/* item selecionado */
+.sidebar ul li.selecionado a {
+    background-color: rgba(120, 154, 202, 0.2);
+    border-left-color: #004ca3;
+    color: #00d2d9;
+    font-weight: bold;
+}
+
+.sair {
+    position: fixed;
+    bottom: 19px;
+    left: flex;
+    margin-left: 50px;
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20vh;
+    /* 20% da altura da tela */
+    background-color: rgb(14, 44, 58);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem 2rem 3rem;
+    /* mais espaço embaixo pro botão não ficar no meio do "sumiço" */
+    border-radius: 20px;
+
+    /* sólido no topo, esvaindo até transparente embaixo */
+    background: linear-gradient(to bottom,
+            #383434 0%,
+            #383434 55%,
+            rgba(56, 52, 52, 0.2) 100%);
+
+    /* tire o box-shadow: ele desenharia uma borda dura em volta do card e estragaria o efeito */
+}
+
+.formlabel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem 2rem 3rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form button {
+    padding: 0.5rem 1rem;
+    background-color: #00a388b9;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding-bottom: 0.5rem;
+    margin-top: auto;
+}
+
+.login-form label {
+    color: #f5f5f5;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 0.5rem;
+}
+
+.rodacabeca h2 {
+    color: #4adff380;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    text-shadow: 0 0 8px #667976b9;
+}
+
+.rodacabeca h1 {
+    color: #00a388b9;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    text-shadow: 0 0 8px #00a388b9;
+}
+
+.ajuda a {
+    color: #6ad3e0cb;
+    text-decoration: none;
+    text-shadow: 0 0 8px #3879b6;
+    font-size: 0.9rem;
+    text-shadow: 0 0 8px #0054a3;
+    margin-top: 1rem;
+}
+
+.ajuda a:hover {
+    text-decoration: underline;
+    margin-top: 1rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #a5a5a5;
+}
