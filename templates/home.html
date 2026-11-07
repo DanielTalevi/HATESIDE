@@ -1,30 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="../static/css/home.css">
+    <title>HATESIDE | Dashboard</title>
     <link rel="stylesheet" href="../static/css/all.css">
+    <link rel="stylesheet" href="../static/css/home.css">
 </head>
-
 <body>
-    <div class="topbar">
-        <h3>Welcome to </h3>
-        <h1>HATESIDE</h1>
-    </div>
+    <header class="topbar">
+        <div class="brand">
+            <img src="../static/img/logo.png" alt="HATESIDE" class="logo">
+            <div class="brand-text">
+                <h3>Welcome to</h3>
+                <h1>HATESIDE</h1>
+            </div>
+        </div>
+        <div class="top-actions">
+            <span class="plan">Plano Pro</span>
+            <div class="avatar">DT</div>
+        </div>
+    </header>
 
-    <div class="sidebar">
+    <aside class="sidebar">
         <ul>
-            <li class="selecionado"><a href="home.html">Dashboard</a></li>
-            <li><a href="#">Vendas</a></li>
-            <li><a href="#">Canal</a></li>
+            <li class="selecionado"><a href="#" data-view="dashboard">
+                <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+                <span>Dashboard</span></a></li>
+            <li><a href="#" data-view="vendas">
+                <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8v6h2V3h-9v2h6l-6 6-4-4-8 8z"/></svg>
+                <span>Vendas</span></a></li>
+            <li><a href="#" data-view="canal">
+                <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h10v2H4z"/></svg>
+                <span>Canal</span></a></li>
         </ul>
         <button id="sair" class="sair">Logout</button>
-    </div>
+    </aside>
 
-    <script src="../static/js/all.js"></script>
+    <main class="content">
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="view">
+            <div class="page-head">
+                <h2>Dashboard</h2>
+                <select id="periodo">
+                    <option value="7">Últimos 7 dias</option>
+                    <option value="30" selected>Últimos 30 dias</option>
+                </select>
+            </div>
+
+            <div class="kpis" id="kpis"></div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>Faturamento</h4>
+                    <div id="chart"></div>
+                </div>
+                <div class="card">
+                    <h4>Vendas por canal</h4>
+                    <div id="canais-bar"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h4>Últimas vendas</h4>
+                <table><thead><tr><th>Pedido</th><th>Cliente</th><th>Canal</th><th>Valor</th><th>Status</th></tr></thead>
+                <tbody id="tb-recentes"></tbody></table>
+            </div>
+        </section>
+
+        <!-- VENDAS -->
+        <section id="vendas" class="view hidden">
+            <div class="page-head">
+                <h2>Vendas</h2>
+                <input id="busca" type="search" placeholder="Buscar cliente ou pedido...">
+            </div>
+            <div class="card">
+                <table><thead><tr><th>Pedido</th><th>Cliente</th><th>Canal</th><th>Valor</th><th>Status</th></tr></thead>
+                <tbody id="tb-vendas"></tbody></table>
+            </div>
+        </section>
+
+        <!-- CANAL -->
+        <section id="canal" class="view hidden">
+            <div class="page-head"><h2>Canal</h2></div>
+            <div class="canais" id="canais-cards"></div>
+        </section>
+
+    </main>
+
+    <script src="../static/js/home.js"></script>
 </body>
-
 </html>

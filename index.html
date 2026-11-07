@@ -1,44 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HATESIDE</title>
+    <title>HATESIDE | Login</title>
+    <link rel="stylesheet" href="static/css/all.css">
     <link rel="stylesheet" href="static/css/login.css">
-    
 </head>
-
 <body>
-    <div class="login-form">
-
-        <div class="rodacabeca">
-            <h1>HATESIDE</h1>
-            <h2>Login</h2>
+    <header class="topbar">
+        <div class="brand">
+            <img src="static/img/logo.png" alt="HATESIDE" class="logo">
+            <div class="brand-text">
+                <h3>Welcome to</h3>
+                <h1>HATESIDE</h1>
+            </div>
         </div>
-
-        <form id="loginForm" action="#" method="post" class="formlabel">
-            <div>
-                <label for="username">Username</label>
-                <input class="form-control" type="text" id="username" name="username" placeholder="Username"
-                    autocomplete="username" required>
+    </header>
+ 
+    <main class="login-form">
+        <div class="rodacabeca">
+            <img src="static/img/logo.png" alt="" class="logo-grande">
+            <h2>Login</h2>
+            <p>Acesse o painel da sua loja</p>
+        </div>
+ 
+        <form id="loginForm" action="#" method="post" class="formlabel" novalidate>
+            <div class="campo">
+                <label for="username">Usuário</label>
+                <input class="form-control" type="text" id="username" name="username"
+                    placeholder="Digite seu usuário" autocomplete="username" required>
             </div>
-
-            <div>
-                <label for="password">Password</label>
-                <input class="form-control" type="password" id="password" name="password" placeholder="Password"
-                    autocomplete="current-password" required>
+ 
+            <div class="campo">
+                <label for="password">Senha</label>
+                <div class="senha-wrap">
+                    <input class="form-control" type="password" id="password" name="password"
+                        placeholder="Digite sua senha" autocomplete="current-password" required>
+                    <button type="button" id="toggleSenha" class="toggle" aria-label="Mostrar senha">Mostrar</button>
+                </div>
             </div>
-            <button type="submit" id="login">Login</button>
-            <a href="#">Precisa de ajuda?</a>
-            <p id="mensagem" style="color: #ff6b6b; margin: 0;"></p>
+ 
+            <p id="mensagem" class="mensagem" role="alert"></p>
+ 
+            <button type="submit" id="login" class="btn-login">Entrar</button>
+            <a href="#" class="ajuda">Precisa de ajuda?</a>
         </form>
-    </div>
-
+    </main>
+ 
     <footer>
         &copy; 2026 HATESIDE. Todos os direitos reservados a loja de vestimentas HATESIDE.
     </footer>
+ 
     <script src="static/js/login.js"></script>
 </body>
-
 </html>
+ 

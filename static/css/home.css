@@ -1,20 +1,97 @@
+/* home.css - body e layout da página home (carregar depois do all.css) */
+
 body {
     margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 20vh;
-    background-color: rgb(14, 44, 58);
+    background: var(--bg);
+    color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.corpo {
-    
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    padding: 10vh 5vh;
-    width: 20%;
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+    position: fixed; top: 64px; left: 0; bottom: 0; width: 220px;
+    background: var(--sidebar);
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 16px 0 24px;
+    z-index: 90;
+}
+.sidebar ul { list-style: none; margin: 0; padding: 0; }
+.sidebar ul li a {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 20px;
+    color: #cfd8d6; text-decoration: none;
+    border-left: 4px solid transparent;
+    transition: background-color 0.2s, color 0.2s;
+}
+.sidebar svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
+.sidebar ul li a:hover { background: rgba(0, 163, 136, 0.12); color: #fff; }
+.sidebar ul li.selecionado a {
+    background: rgba(0, 163, 136, 0.2);
+    border-left-color: var(--teal);
+    color: var(--teal-light);
+    font-weight: bold;
+}
+.sair {
+    align-self: center;
+    padding: 10px 28px; border: none; border-radius: 6px;
+    background: #ff4d4f; color: #fff; font-weight: bold; cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+}
+.sair:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* ---------- CONTEÚDO ---------- */
+.content { margin-left: 220px; padding: 88px 28px 32px; }
+.hidden { display: none; }
+.page-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.page-head h2 { margin: 0; font-size: 1.5rem; }
+select, input[type="search"] {
+    background: var(--card); color: var(--text);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 8px 12px; font-size: 0.9rem;
+}
+
+.card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px; margin-bottom: 20px;
+}
+.card h4 { margin: 0 0 14px; font-size: 0.95rem; color: var(--muted); font-weight: normal; }
+
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 20px; }
+.kpi { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+.kpi small { color: var(--muted); }
+.kpi strong { display: block; font-size: 1.6rem; margin: 6px 0 4px; }
+.up { color: var(--teal-light); font-size: 0.8rem; }
+.down { color: #ff7a7c; font-size: 0.8rem; }
+
+.grid-2 { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
+
+#chart svg { width: 100%; height: 200px; display: block; }
+
+.bar-row { margin-bottom: 14px; font-size: 0.85rem; }
+.bar-row div:first-child { display: flex; justify-content: space-between; margin-bottom: 4px; }
+.bar-bg { background: rgba(255, 255, 255, 0.07); border-radius: 4px; height: 8px; }
+.bar-fill { background: var(--teal); height: 100%; border-radius: 4px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: normal; font-size: 0.8rem; }
+.tag { padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; }
+.tag.pago { background: rgba(0, 163, 136, 0.2); color: var(--teal-light); }
+.tag.pendente { background: rgba(255, 193, 7, 0.18); color: #ffd04d; }
+.tag.cancelado { background: rgba(255, 77, 79, 0.18); color: #ff7a7c; }
+
+.canais { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.canal-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+.canal-card h4 { margin: 0 0 4px; font-size: 1.1rem; }
+.canal-card p { margin: 0 0 14px; color: var(--muted); font-size: 0.85rem; }
+.canal-card .num { font-size: 1.4rem; font-weight: bold; }
+
+/* ---------- RESPONSIVO ---------- */
+@media (max-width: 800px) {
+    .sidebar { width: 64px; }
+    .sidebar ul li a span { display: none; }
+    .sidebar ul li a { justify-content: center; padding: 14px 0; }
+    .sair { padding: 8px 10px; font-size: 0.7rem; }
+    .content { margin-left: 64px; padding: 84px 14px 24px; }
+    .grid-2 { grid-template-columns: 1fr; }
 }
