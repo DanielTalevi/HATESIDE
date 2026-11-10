@@ -30,7 +30,7 @@
     text-shadow: 0 0 8px #667976b9;
 }
 .brand-text h1 {
-    margin: 0; font-size: 1.7rem; color: #00a388b9;
+    margin: 0; font-size: 1.7rem; color: #FFFFFF;
     text-shadow: 0 0 8px #00a388b9; line-height: 1;
 }
 .top-actions { display: flex; align-items: center; gap: 14px; }
